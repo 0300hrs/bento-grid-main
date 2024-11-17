@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+:root {
+  --purple1: hsl(254, 88%, 90%);
+  --purple2: hsl(256, 67%, 59%);
+  --yellow1: hsl(31, 66%, 93%);
+  --yellow2: hsl(39, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  background-color: rgb(232, 230, 230);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Common styles that don't change */
+.bg-l-purple {
+  background-color: var(--purple1);
+  color: var(--black);
+}
+
+.bg-purple {
+  background-color: var(--purple2);
+  color: var(--white);
+}
+
+.bg-yellow {
+  background-color: var(--yellow2);
+  color: var(--black);
+}
+
+.bg-l-yellow {
+  background-color: var(--yellow1);
+  color: var(--black);
+}
+
+.bg-white {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Mobile styles (default) */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 10px;
+  width: 320px;
+}
+
+.container div {
+  padding: 15px;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.container .yellow {
+  color: var(--yellow2);
+}
+
+.container .purple {
+  color: var(--purple2);
+}
+
+.container .large {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.container .small {
+  font-size: 0.9rem;
+  font-weight: 200;
+}
+
+/* Common styles for both mobile and desktop */
+.first .large {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.first img {
+  width: 55%;
+}
+
+.second img {
+  width: 100%;
+}
+
+.third {
+  padding: 15px 15px 0 15px;
+}
+
+.third img {
+  width: 70%;
+  margin-right: auto;
+}
+
+.fourth .small {
+  font-weight: 400;
+}
+
+.sixth .large {
+  font-size: 1.65rem;
+}
+
+.sixth img {
+  width: 60%;
+}
+
+.seventh img {
+  width: 60%;
+}
+
+.eight .large {
+  font-size: 1.65rem;
+}
+
+/* Desktop styles (media query) */
+@media screen and (min-width: 750px) {
+  .container {
+    display: grid;
+    grid-auto-flow: dense;
+    gap: 1rem;
+    grid-template-rows: 230px 180px 180px;
+    grid-template-columns: repeat(4, 200px);
+    padding: 10px;
+    max-width: 920px;
+    width: auto;
+  }
+
+  .container div {
+    gap: 10px;
+    text-align: left;
+    overflow: hidden;
+  }
+
+  .first {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center !important;
+  }
+
+  .second {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  .third {
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  .fourth {
+    padding: 0 !important;
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .fourth span {
+    padding: 15px;
+  }
+
+  .fourth img {
+    width: 120%;
+    padding-left: 15px;
+  }
+
+  .fifth {
+    grid-column: 3 / span 2;
+    grid-row: 3;
+    flex-direction: row !important;
+  }
+
+  .fifth img {
+    min-width: 40%;
+  }
+
+  .fifth span {
+    align-self: center;
+    width: 60%;
+  }
+
+  .sixth {
+    grid-column: 2;
+    grid-row: 3;
+    gap: 10px;
+  }
+
+  .seventh {
+    grid-column: 1;
+    grid-row: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .eight {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    justify-content: space-around;
+  }
+
+  .eight img {
+    width: 100%;
+  }
+}
